@@ -65,6 +65,11 @@ jobs:
               os: ubuntu-latest,
             }
           - {
+              name: "Linux-x86",
+              target: i686-unknown-linux-musl,
+              os: ubuntu-latest,
+            }
+          - {
               name: "macOS-x86_64",
               target: x86_64-apple-darwin,
               os: macOS-latest,
@@ -77,6 +82,11 @@ jobs:
           - {
               name: "windows-x86_64",
               target: x86_64-pc-windows-msvc,
+              os: windows-latest,
+            }
+          - {
+              name: "windows-x86",
+              target: i686-pc-windows-msvc,
               os: windows-latest,
             }
     env:
@@ -101,7 +111,7 @@ jobs:
 
       - uses: actions/setup-python@v5
         with:
-          python-version: "3.8"
+          python-version: "3.12"
 
       - name: Install Rust toolchain
         uses: actions-rust-lang/setup-rust-toolchain@v1
